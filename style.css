@@ -1,0 +1,164 @@
+/* Reset base */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    over-flow: hidden;
+}
+
+body {
+    background: linear-gradient(to bottom, #0078d7, #f5f5f5);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+
+/* Header styles */
+.main-header, .section-header {
+    text-align: center;
+    padding: 2rem;
+    background-color: #0078d7;
+    color: white;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
+.main-header h1, .section-header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+.main-header .since {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+}
+
+.main-header .info {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+}
+
+.main-header .id {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+}
+
+.links .btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem;
+    background-color: #005bb5;
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.links .btn:hover {
+    background-color: #003d80;
+}
+
+/* Navigation */
+.navigation ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    text-align: center;
+}
+
+.navigation ul li {
+    margin: 0 1rem;
+}
+
+.navigation ul li a {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #0078d7;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.navigation ul li a:hover {
+    border-bottom: 2px solid #005bb5;
+}
+
+/* Grid for sections */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.card {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-weight: bold;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Pulsante per tornare alla home */
+.back-to-home {
+    display: block;
+    text-align: center;
+    margin: 2rem 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #0078d7;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.back-to-home:hover {
+    color: #005bb5;
+}
+
+/* Transizioni per il cambio pagina */
+.fade-out {
+    animation: fadeOut 0.5s forwards;
+}
+
+.fade-in {
+    animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
