@@ -162,3 +162,43 @@ a {
         opacity: 1;
     }
 }
+
+/* Animazione per far comparire le cards */
+@keyframes slideIn {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.card {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-weight: bold;
+    opacity: 0; /* Inizia invisibile */
+    transform: translateY(50px); /* Fuori dalla visuale */
+    animation: slideIn 0.5s ease forwards;
+}
+
+.card[data-delay="0"] {
+    animation-delay: 0.2s;
+}
+.card[data-delay="1"] {
+    animation-delay: 0.4s;
+}
+.card[data-delay="2"] {
+    animation-delay: 0.6s;
+}
+.card[data-delay="3"] {
+    animation-delay: 0.8s;
+}
+.card[data-delay="4"] {
+    animation-delay: 1s;
+}
