@@ -6,7 +6,7 @@ body, html {
     font-family: 'Roboto', sans-serif;
     background-color: #f5f5f5;
     color: #333;
-    over-flow: hidden;
+    overflow: hidden;
 }
 
 body {
@@ -190,15 +190,36 @@ a {
 .card[data-delay="0"] {
     animation-delay: 0.2s;
 }
+
 .card[data-delay="1"] {
     animation-delay: 0.4s;
 }
+
 .card[data-delay="2"] {
     animation-delay: 0.6s;
 }
+
 .card[data-delay="3"] {
     animation-delay: 0.8s;
 }
+
 .card[data-delay="4"] {
     animation-delay: 1s;
+}
+
+/* Fiocchi di neve */
+.snowflake {
+    position: fixed;
+    top: -10px;
+    font-size: 0.5rem; /* Dimensione del fiocco */
+    color: white;
+    opacity: 0.8;
+    animation: fall linear infinite;
+    pointer-events: none; /* I fiocchi non interferiscono con i click */
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+    }
 }
