@@ -1,93 +1,181 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Francesco's Projects</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <title>Oops! Stiamo Sistemando le Cose</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color: #ffd54f;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ff9800' fill-opacity='0.2'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        .container {
+            background-color: white;
+            border-radius: 15px;
+            border: 5px dashed #ff6b6b;
+            padding: 30px;
+            text-align: center;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 10px 10px 0px #ff9800;
+        }
+        
+        h1 {
+            color: #ff6b6b;
+            margin-bottom: 20px;
+            font-size: 32px;
+            transform: rotate(-2deg);
+        }
+        
+        .emoji {
+            font-size: 80px;
+            margin-bottom: 20px;
+            animation: bounce 2s infinite;
+        }
+        
+        p {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #555;
+        }
+        
+        .strong {
+            font-weight: bold;
+            color: #ff6b6b;
+            font-size: 20px;
+        }
+        
+        .progress-container {
+            width: 100%;
+            background-color: #f1f1f1;
+            border-radius: 10px;
+            margin: 30px 0;
+            height: 30px;
+            border: 2px solid #ccc;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .progress-bar {
+            width: 70%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                45deg,
+                #ff9800,
+                #ff9800 20px,
+                #ffb74d 20px,
+                #ffb74d 40px
+            );
+            border-radius: 8px;
+            animation: progress 3s ease-in-out infinite alternate;
+        }
+        
+        .tools {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+            gap: 15px;
+        }
+        
+        .tool {
+            font-size: 40px;
+            animation: wiggle 3s infinite;
+            transform-origin: center;
+        }
+        
+        .signature {
+            margin-top: 30px;
+            font-style: italic;
+            color: #888;
+        }
+        
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+        
+        @keyframes wiggle {
+            0%, 100% {
+                transform: rotate(0deg);
+            }
+            25% {
+                transform: rotate(10deg);
+            }
+            75% {
+                transform: rotate(-10deg);
+            }
+        }
+        
+        @keyframes progress {
+            0% {
+                width: 30%;
+            }
+            100% {
+                width: 90%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                border-width: 3px;
+                box-shadow: 5px 5px 0px #ff9800;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+            
+            .emoji {
+                font-size: 60px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Header Section -->
-    <header class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>🧑🏼‍💻 Francesco's Projects 🧑🏼‍💻</h1>
-                <p>📆 Since 2017</p>
-                <p class="hero-id">🆔 633883299</p>
-                <p class="hero-username">🌐 @Direttore / @Condannato</p>
-                <div class="button-group">
-                    <a href="https://t.me/facsoBot" class="btn btn-primary">🇮🇹 LIMITATI 🇮🇹</a>
-                    <a href="https://t.me/facsoBot" class="btn btn-primary">🇬🇧 LIMITED 🇬🇧</a>
-                </div>
-            </div>
+    <div class="container">
+        <div class="emoji">🛠️</div>
+        <h1>Oops! Stiamo Aggiustando Qualcosa!</h1>
+        <p>Il nostro sito è temporaneamente chiuso per <span class="strong">manutenzione</span> (o forse per una pausa caffè troppo lunga 😉)</p>
+        <p>Stiamo lavorando duramente per tornare online... o almeno ci stiamo provando!</p>
+        
+        <div class="tools">
+            <div class="tool">🔧</div>
+            <div class="tool">🔨</div>
+            <div class="tool">🧰</div>
         </div>
-    </header>
-
-    <!-- Divider -->
-    <div class="divider"></div>
-
-    <!-- Categories Section -->
-    <main>
-        <section class="categories">
-            <div class="container">
-                <h2>ℹ️ Explore Categories ℹ️</h2>
-                <div class="categories-grid">
-                    <button class="category-btn" data-popup="bots">🤖 Bots</button>
-                    <button class="category-btn" data-popup="channels">📣 Channels</button>
-                    <button class="category-btn wide" data-popup="groups">👥 Groups/Networks</button>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Pop-ups -->
-
-    <div id="popup-bots" class="popup">
-        <div class="popup-content">
-            <span class="popup-close">&times;</span>
-            <h3>🤖 Bots</h3>
-            <div class="popup-links">
-                <a href="https://t.me/ChatFightBot" target="_blank" class="link">@ChatFightBot</a>
-                <a href="https://t.me/MultiForwardBot" target="_blank" class="link">@MultiForwardBot</a>
-                <a href="https://t.me/DangerousUsersBot" target="_blank" class="link"><s>@DangerousUsersBot</s></a>
-                <a href="https://t.me/WordChainMasterBot" target="_blank" class="link"><s>@WordChainMasterBot</s></a>
-               <a href="https://t.me/BlockListScammerBot" target="_blank" class="link">@BlockListScammerBot</a>
-                <h5>⁣⁣⁣</h5>
-                <h5><i>⚠️ » @DangerousUsersBot is offline.</i></h5>
-                <h5><i>⚠️ » @WordChainMasterBot is offline.</i></h5>
-            </div>
+        
+        <p class="strong">Completamento lavori:</p>
+        <div class="progress-container">
+            <div class="progress-bar"></div>
         </div>
+        
+        <p>Nel frattempo, puoi fare cose più produttive come:</p>
+        <p>• Preparare un caffè ☕<br>
+           • Fare stretching 🧘<br>
+           • Accarezzare il tuo animale domestico 🐈<br>
+           • Guardare fuori dalla finestra e chiederti il senso della vita 🤔</p>
+        
+        <p class="signature">Con affetto e un po' di imbarazzo, <br>Il Team che ora sta cercando di capire cosa si è rotto</p>
     </div>
-
-    <div id="popup-channels" class="popup">
-        <div class="popup-content">
-            <span class="popup-close">&times;</span>
-            <h3>📣 Channels</h3>
-            <div class="popup-links">
-                <a href="https://t.me/tginfoita" target="_blank" class="link">@tginfoita</a>
-                <a href="https://t.me/betainfoita" target="_blank" class="link">@betainfoita</a>
-                <a href="https://t.me/ChatFightUpdates" target="_blank" class="link">@ChatFightUpdates</a>
-            </div>
-        </div>
-    </div>
-
-    <div id="popup-groups" class="popup">
-        <div class="popup-content">
-            <span class="popup-close">&times;</span>
-            <h3>👥 Groups/Networks</h3>
-            <div class="popup-links">
-                <a href="https://t.me/ITA_Gruppi" target="_blank" class="link">@ITA_Gruppi</a>
-                <a href="https://t.me/NetworkCina/18" target="_blank" class="link">@NetworkCina</a> 
-                <a href="https://t.me/tginfoitachat" target="_blank" class="link">@tginfoitachat</a>
-                <a href="https://t.me/PlayersNetwork/40" target="_blank" class="link">@PlayersNetwork</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer>
-        <p>© 2025 Francesco's Projects</p>
-    </footer>
 </body>
 </html>
