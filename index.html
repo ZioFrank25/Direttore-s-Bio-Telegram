@@ -3,22 +3,138 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Website Under Maintenance</title>
+  <title>@Direttore's Bio</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Sfondo glitch in movimento -->
-  <div class="glitch-background"></div>
+  <div class="main-screen">
+    <h1>@Direttore</h1>
+    <p>Moderator and Manager</p>
 
-  <div class="content">
-    <!-- Titolo principale glitchato -->
-    <h1 class="glitch" data-text="Website Under Maintenance">Website Under Maintenance</h1>
-    
-    <!-- Testo dinamico che cambia -->
-    <p class="subtext">Performing scheduled upgrades...</p>
-    
-    <!-- Loader pulsante -->
-    <div class="pulse-loader"></div>
+    <div class="buttons-grid">
+      <button class="open-popup" data-target="bots">🤖 BOTS 🤖</button>
+      <button class="open-popup" data-target="groups">👥 GROUPS 👥</button>
+      <button class="open-popup" data-target="channels">📣 CHANNELS 📣</button>
+      <button class="open-popup" data-target="info">ℹ️ INFO ℹ️</button>
+    </div>
+  </div>
+
+  <!-- Popup Bots -->
+  <div id="popup-bots" class="popup">
+    <div class="popup-content">
+      <span class="close-popup">&times;</span>
+      <h2>🤖 BOTS 🤖</h2>
+      <div class="items">
+        <div class="item">
+          <h3>ChatFightBot <span class="status online">ONLINE</span></h3>
+          <p>Combat System</p>
+          <a href="https://t.me/ChatFightBot" target="_blank">Access Bot →</a>
+        </div>
+        <div class="item">
+          <h3>MultiForwardBot <span class="status online">ONLINE</span></h3>
+          <p>Forward System</p>
+          <a href="https://t.me/MultiForwardBot" target="_blank">Access Bot →</a>
+        </div>
+        <div class="item">
+          <h3>BlockListScammerBot <span class="status online">ONLINE</span></h3>
+          <p>Security System</p>
+          <a href="https://t.me/BlockListScammerBot" target="_blank">Access Bot →</a>
+        </div>
+        <div class="item">
+          <h3>DangerousUsersBot <span class="status offline">OFFLINE</span></h3>
+          <p>System Unavailable</p>
+        </div>
+        <div class="item">
+          <h3>WordChainMasterBot <span class="status offline">OFFLINE</span></h3>
+          <p>System Unavailable</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Popup Groups -->
+  <div id="popup-groups" class="popup">
+    <div class="popup-content">
+      <span class="close-popup">&times;</span>
+      <h2>👥 GROUPS 👥</h2>
+      <div class="items">
+        <div class="item">
+          <h3>ITA_Gruppi <span class="status online">ONLINE</span></h3>
+          <p>Italian Hub</p>
+          <a href="https://t.me/ITA_Gruppi" target="_blank">Access Group →</a>
+        </div>
+        <div class="item">
+          <h3>NetworkCina <span class="status online">ONLINE</span></h3>
+          <p>Network Hub</p>
+          <a href="https://t.me/NetworkCina/18" target="_blank">Access Group →</a>
+        </div>
+        <div class="item">
+          <h3>tginfoitachat <span class="status online">ONLINE</span></h3>
+          <p>Chat Group</p>
+          <a href="https://t.me/tginfoitachat" target="_blank">Access Group →</a>
+        </div>
+        <div class="item">
+          <h3>PlayersNetwork <span class="status online">ONLINE</span></h3>
+          <p>Players Hub</p>
+          <a href="https://t.me/PlayersNetwork/40" target="_blank">Access Group →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Popup Channels -->
+  <div id="popup-channels" class="popup">
+    <div class="popup-content">
+      <span class="close-popup">&times;</span>
+      <h2>📣 CHANNELS 📣</h2>
+      <div class="items">
+        <div class="item">
+          <h3>tginfoita <span class="status online">ONLINE</span></h3>
+          <p>Info Channel</p>
+          <a href="https://t.me/tginfoita" target="_blank">Access Channel →</a>
+        </div>
+        <div class="item">
+          <h3>betainfoita <span class="status online">ONLINE</span></h3>
+          <p>Beta Channel</p>
+          <a href="https://t.me/betainfoita" target="_blank">Access Channel →</a>
+        </div>
+        <div class="item">
+          <h3>ChatFightUpdates <span class="status online">ONLINE</span></h3>
+          <p>Updates Channel</p>
+          <a href="https://t.me/ChatFightUpdates" target="_blank">Access Channel →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Popup Info -->
+  <div id="popup-info" class="popup">
+    <div class="popup-content">
+      <span class="close-popup">&times;</span>
+      <h2>ℹ️ INFO ℹ️</h2>
+      <div class="items">
+        <div class="item">
+          <h3>Active Since</h3>
+          <p>2017</p>
+        </div>
+        <div class="item">
+          <h3>Telegram ID</h3>
+          <p>633883299</p>
+        </div>
+        <div class="item">
+          <h3>Usernames</h3>
+          <p>
+            <a href="https://t.me/Direttore" target="_blank">@Direttore</a> / 
+            <a href="https://t.me/Condannato" target="_blank">@Condannato</a>
+          </p>
+        </div>
+        <div class="item">
+          <h3>Limited Access</h3>
+          <p>🇮🇹LIMITATI🇮🇹 / 🇬🇧LIMITED🇬🇧</p>
+          <a href="https://t.me/facsoBot" target="_blank">Access Restricted →</a>
+        </div>
+      </div>
+    </div>
   </div>
 
   <script src="script.js"></script>

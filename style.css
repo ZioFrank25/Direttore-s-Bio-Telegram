@@ -7,138 +7,205 @@
   box-sizing: border-box;
 }
 
-/* Impostazioni base */
-html, body {
+/* Impostazioni generali */
+body, html {
   width: 100%;
   height: 100%;
-  background: #000;
-  overflow: hidden;
   font-family: 'Share Tech Mono', monospace;
+  background: radial-gradient(ellipse at center, #0a0a0f 0%, #141421 100%);
   color: #00ffe7;
+  overflow-x: hidden;
+  position: relative;
 }
 
-/* Sfondo con effetto scanline */
-.glitch-background {
+/* Background dinamico */
+body::before {
+  content: "";
   position: absolute;
-  width: 100%;
-  height: 100%;
-  background: repeating-linear-gradient(
-    0deg,
-    rgba(0, 255, 231, 0.05),
-    rgba(0, 255, 231, 0.05) 2px,
-    transparent 2px,
-    transparent 4px
-  );
-  animation: scan 10s linear infinite;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(60deg, rgba(0, 255, 231, 0.03) 0%, transparent 100%);
+  animation: moveBackground 60s linear infinite;
   z-index: 0;
 }
 
-/* Movimento verticale lento dello sfondo */
-@keyframes scan {
-  0% { background-position: 0 0; }
-  100% { background-position: 0 1000px; }
-}
-
-/* Contenuto centrato */
-.content {
+/* Schermata principale */
+.main-screen {
   position: relative;
   z-index: 1;
-  height: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   padding: 20px;
+  animation: fadeIn 2s ease;
 }
 
-/* Titolo glitchato */
-.glitch {
+.main-screen h1 {
   font-size: 3rem;
-  position: relative;
-  color: #00ffe7;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  animation: glitch 2s infinite;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+  text-shadow: 0 0 10px #00ffe7;
 }
 
-.glitch::before, .glitch::after {
-  content: attr(data-text);
-  position: absolute;
-  top: 0;
-  left: 0;
+.main-screen p {
+  font-size: 1.2rem;
+  color: rgba(0, 255, 231, 0.7);
+  margin-bottom: 40px;
+}
+
+/* Griglia pulsanti */
+.buttons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
   width: 100%;
+  max-width: 600px;
+}
+
+.open-popup {
+  padding: 15px 20px;
+  font-size: 1rem;
+  border: 2px solid #00ffe7;
+  background: transparent;
   color: #00ffe7;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  position: relative;
   overflow: hidden;
 }
 
-.glitch::before {
-  left: 2px;
-  text-shadow: -2px 0 magenta;
-  animation: glitchTop 2s infinite;
+.open-popup:hover {
+  background: #00ffe7;
+  color: #0a0a0f;
 }
 
-.glitch::after {
-  left: -2px;
-  text-shadow: -2px 0 red;
-  animation: glitchBottom 2s infinite;
+/* Popup */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(10px);
+  background: rgba(10, 10, 15, 0.7);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.5s ease;
 }
 
-/* Effetto glitch principale */
-@keyframes glitch {
-  0% { transform: none; }
-  20% { transform: skewX(5deg); }
-  40% { transform: skewX(-5deg); }
-  60% { transform: skewX(5deg); }
-  80% { transform: skewX(-5deg); }
-  100% { transform: none; }
+/* Contenuto popup */
+.popup-content {
+  background: rgba(18, 18, 27, 0.7);
+  border: 1px solid rgba(0, 255, 231, 0.2);
+  box-shadow: 0 0 30px rgba(0, 255, 231, 0.1);
+  padding: 30px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 700px;
+  max-height: 80%;
+  overflow-y: auto;
+  position: relative;
+  animation: popupSlide 0.5s ease;
 }
 
-/* Taglio e sfasamento superiore */
-@keyframes glitchTop {
-  0% { clip: rect(0, 9999px, 0, 0); }
-  10% { clip: rect(0, 9999px, 20px, 0); }
-  20% { clip: rect(0, 9999px, 0, 0); }
-  30% { clip: rect(0, 9999px, 30px, 0); }
-  100% { clip: rect(0, 9999px, 0, 0); }
+/* Bottone chiusura */
+.close-popup {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 2rem;
+  color: #00ffe7;
+  cursor: pointer;
 }
 
-/* Taglio e sfasamento inferiore */
-@keyframes glitchBottom {
-  0% { clip: rect(0, 9999px, 0, 0); }
-  10% { clip: rect(30px, 9999px, 9999px, 0); }
-  20% { clip: rect(0, 9999px, 0, 0); }
-  30% { clip: rect(20px, 9999px, 9999px, 0); }
-  100% { clip: rect(0, 9999px, 0, 0); }
+/* Titolo sezione */
+.popup-content h2 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+  text-shadow: 0 0 5px #00ffe7;
 }
 
-/* Testo sotto dinamico */
-.subtext {
-  font-size: 1.2rem;
-  margin-top: 20px;
-  opacity: 0.8;
-  animation: flicker 3s infinite;
+/* Lista elementi */
+.items {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-/* Loader pulsante */
-.pulse-loader {
-  margin-top: 40px;
-  width: 50px;
-  height: 50px;
-  border: 3px solid #00ffe7;
-  border-radius: 50%;
-  animation: pulse 1.5s infinite ease-in-out;
+.item {
+  background: rgba(27, 27, 41, 0.8);
+  padding: 20px;
+  border-radius: 8px;
+  transition: transform 0.3s, background 0.3s;
 }
 
-/* Animazione del loader */
-@keyframes pulse {
-  0% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.3); opacity: 0.6; }
-  100% { transform: scale(1); opacity: 1; }
+.item:hover {
+  background: rgba(35, 35, 57, 0.9);
+  transform: scale(1.02);
 }
 
-/* Flicker sul testo dinamico */
-@keyframes flicker {
-  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 0.99; }
-  20%, 24%, 55% { opacity: 0.4; }
+/* Stato */
+.status {
+  font-size: 0.9rem;
+  margin-left: 10px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: rgba(0, 255, 0, 0.2);
+  color: #00ff00;
+}
+
+.status.offline {
+  background: rgba(255, 0, 0, 0.2);
+  color: #ff0000;
+}
+
+/* Link interni popup */
+.item a {
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+  color: #00ffe7;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.item a:hover {
+  color: #00bfa5;
+}
+
+/* Link multipli (esempio Direttore / Condannato) */
+.item p a {
+  margin: 0 5px;
+  font-size: 1rem;
+}
+
+/* Animazioni */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes popupSlide {
+  0% { transform: translateY(-50px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes moveBackground {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .buttons-grid {
+    grid-template-columns: 1fr;
+  }
 }
