@@ -1,39 +1,37 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pulsantiera ATAC Ultra Realistica</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Under Maintenance - @Direttore</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='%2300ffe7' d='M12 2a10 10 0 0 0-10 10 10 10 0 0 0 10 10 10 10 0 0 0 10-10 10 10 0 0 0-10-10zm0 18a8 8 0 0 1-8-8 8 8 0 0 1 8-8 8 8 0 0 1 8 8 8 8 0 0 1-8 8zm-1-12h2v2h-2zm0 4h2v6h-2z'/></svg>">
 </head>
 <body>
-    <div class="container">
-        <div class="control-panel">
-            <div class="button-wrapper">
-                <button class="door-button" id="door1">
-                    <span class="led"></span>
-                </button>
-            </div>
-            <div class="button-wrapper">
-                <button class="door-button" id="door2">
-                    <span class="led"></span>
-                </button>
-            </div>
-            <div class="button-wrapper">
-                <button class="door-button" id="door3">
-                    <span class="led"></span>
-                </button>
-            </div>
-            <div class="button-wrapper general">
-                <button class="general-button" id="general">
-                    <span class="led"></span>
-                </button>
-            </div>
-        </div>
-        <div class="status" id="status">Premi un pulsante</div>
+  <!-- Sfondo -->
+  <div class="background">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+  </div>
+
+  <!-- Contenitore -->
+  <div class="maintenance-container">
+    <h1 class="neon-text glitch" data-text="Under Maintenance">Under Maintenance</h1>
+    <p class="subtitle">We're upgrading the system! Back in <span id="countdown">30</span> seconds.</p>
+    <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
+    <div class="loader">
+      <div class="neon-line"></div>
+      <div class="neon-line"></div>
+      <div class="neon-line"></div>
+      <div class="neon-line"></div>
     </div>
-    <audio id="click-sound" src="https://www.soundjay.com/buttons/sounds/button-09.mp3"></audio>
-    <audio id="active-sound" src="https://www.soundjay.com/mechanical/sounds/relay-click.mp3"></audio>
-    <script src="script.js"></script>
+    <a href="https://t.me/Direttore" class="share-button">Visit @Direttore on Telegram</a>
+  </div>
+
+  <!-- Librerie -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" async></script>
+  <script src="script.js"></script>
 </body>
 </html>
